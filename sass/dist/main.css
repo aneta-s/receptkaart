@@ -1,6 +1,6 @@
 body {
   font-family: Arial;
-  color: SlateGray;
+  color: #103438;
 }
 
 #container {
@@ -12,29 +12,63 @@ h1 {
   font-size: 300%;
 }
 
-h1, h2 {
-  color: Orange;
+h1,
+h2 {
+  color: #103438;
   text-transform: uppercase;
   font-weight: 100;
 }
 
-img {
-  width: 100%;
+h3 {
+  justify-content: space-between;
 }
 
-.block {
-  display: block;
+aside {
+  position: relative;
+}
+aside img {
+  width: 100%;
+}
+aside .button {
+  color: #FADB3E;
+  display: inline-block;
+  position: absolute;
+  top: 95%;
+  right: 10%;
+  width: em(65);
+  height: em(65);
+  border-radius: em(65);
+  line-height: em(65);
+  text-align: center;
+}
+aside .button .fa {
+  vertical-align: middle;
+}
+
+.filter {
+  display: inline-block;
+}
+
+a.block {
+  display: inline;
   width: 100%;
   cursor: pointer;
   border: none;
   outline: none;
-  color: white;
-  background-color: rgba(255, 165, 0, 0.8);
+  color: #ffffff;
+  background-color: rgba(16, 52, 56, 0.8);
   margin: 50px 0px 50px;
   padding: 15px 15px;
   border-radius: 5px;
   font-size: 16px;
   text-align: center;
+}
+
+.fa-play-circle,
+.fa-play-circle\:regular {
+  background-position: 0 -58px;
+  width: 21px;
+  height: 26px;
 }
 
 @media screen and (max-width: 768px) {

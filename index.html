@@ -1,46 +1,53 @@
 <!DOCTYPE html>
 <html>
-
-<head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width">
-	<title>Receptkaart</title>
-  <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
-
-	<link href="style.css" rel="stylesheet" type="text/css" />
-</head>
-
-<body>
-	<div id=container>
-		<header>
-            <h1 id="meal">Naam van het gerecht</h1>
-            <aside>
-            <img id="image" src="https://i.imgur.com/wDv7YYv.jpg" alt="Meal">
-<!--             <a href="#" class="button"> <span class="icon icon-play"></span></a>
- -->        </aside>
-                <ul>
-                    <li><span class="fa fa-tag"></span><span id="category"> Category</span></li>
-                    <li><span class="fa fa-hashtag"></span><span id="tag"> Tags</span></li>
-                </ul>
-    </header>
-    <section id="ingredients" onmouseover="ingredientsHover()" onmouseout="ingredientsNormal()">
-      <h2>Ingredients <i class="fa fa-coffee" aria-hidden="true"></i> </h2>
-      <ul class="ingredient-measure">
-          <li><span id="measure">9gr</span><span id="ingredient-info"> Tea Bag</span></li>
-      </ul>
-    </section>
-     <section id="preparation" onmouseover="preparationHover()" onmouseout="preparationNormal()">
-      <h2>Preparation <i class="fa fa-check-square" aria-hidden="true"></i></h2>
-      <ol class="preparation-list">
-        <li id="preparation-step">
-          In a saucepan, bring 4 cups water to a boil; remove from heat. Add tea bags; steep, covered, 5 minutes.
-        </li>
-        <li>Discard tea bags. Stir in sugar until dissolved; cool slightly. Transfer to a pitcher; cool completely.</li>
-        <li>Add lemonade concentrate and nectar to tea; stir in cold water. Serve over ice with mint.</li>
-      </ol>
-    </section>
-    <button type="button" class="block">Click Me!</button>
-       </div>
-       <script src=script.js></script>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>Receptkaart</title>
+    <link
+      href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+      rel="stylesheet"
+      integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN"
+      crossorigin="anonymous"
+    />
+    <link href="css/style.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body>
+    <div id="container">
+      <header>
+        <h1 id="strMeal"></h1>
+        <aside>
+          <img id="image" src="" alt="Meal" />
+          <a id="youtube" href="#" class="button">
+            <span class="fa fa-play-circle"></span
+          ></a>
+        </aside>
+      </header>
+      <section
+        id="ingredients"
+        onmouseover="ingredientsHover()"
+        onmouseout="ingredientsNormal()"
+      >
+        <h2>Ingredients <i class="fa fa-coffee" aria-hidden="true"></i></h2>
+        <ul id="ingredient-measure">
+        </ul>
+      </section>
+      <section
+        id="preparation"
+        onmouseover="preparationHover()"
+        onmouseout="preparationNormal()"
+      >
+        <h2>
+          Preparation <i class="fa fa-check-square" aria-hidden="true"></i>
+        </h2>
+        <ol id="preparation-instructions">
+        </ol>
+      </section>
+     <!-- <form action="https://google.com">
+    <input type="submit" value="Source" />
+</form> -->
+      <button  class="block"><a id="source" href="#"></a>Source</button>
+    </div>
+    <script src="script.js"></script>
   </body>
 </html>

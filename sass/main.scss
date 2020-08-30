@@ -1,49 +1,89 @@
-$color-primary: orange;
-$color-secondary: white;
+$color-primary: #103438;
+$color-secondary: #ffffff;
+$color-tertiary: #777;
+$color-button:#FADB3E;
 
 body {
-    font-family: Arial;
-    color: SlateGray;
-   }
-   #container{
-     width:60%;
-     margin:auto;
-     
-   }
-   
-   h1 {
-    font-size: 300%;
-   }
-   
-   h1,h2 {
-    color: Orange;
-    text-transform: uppercase;
-    font-weight: 100;
-   }
-   
-   img {
+  font-family: Arial;
+  color: $color-primary;
+}
+#container {
+  width: 60%;
+  margin: auto;
+}
+
+h1 {
+  font-size: 300%;
+}
+
+h1,
+h2 {
+  color: $color-primary;
+  text-transform: uppercase;
+  font-weight: 100;
+}
+h3 {
+  justify-content: space-between;
+}
+
+aside {
+  position: relative;
+  img {
     width: 100%;
-   }
- .block {
-     display: block;
-     width: 100%;
-       cursor: pointer;
-       border: none;
-       outline: none;
-       color: white;
-       background-color:rgba($color-primary,0.8);//in css you can not put hex, in scss you can :) #fffff and then opacity
-       margin: 50px 0px 50px;
-            padding: 15px 15px;
-            border-radius: 5px;
-            font-size: 16px;
-            text-align: center;
-        
-   }
-   @media screen and (max-width:768px){
-     #container{
-       width:90%;
-       }
-   h1{
-     font-size:200%;
-   }
-   }
+  }
+  .button {
+    color: $color-button;
+    display: inline-block;
+    position: absolute;
+    top: 95%;
+    right: 10%;
+    width: em(65);//4.0625em
+    height: em(65);
+    border-radius: em(65);
+    line-height: em(65);
+    text-align: center;
+
+    .fa {
+      vertical-align: middle;
+    }
+  }
+}
+
+.filter {
+
+    display: inline-block;
+  
+}
+
+a.block {
+  display: inline;//or block?
+  width: 100%;
+  cursor: pointer;
+  border: none;
+  outline: none;
+  color: $color-secondary;
+  background-color: rgba(
+    $color-primary,
+    0.8
+  ); //in css you can not put hex, in scss you can :) #fffff and then opacity
+  margin: 50px 0px 50px;
+  padding: 15px 15px;
+  border-radius: 5px;
+  font-size: 16px;
+  text-align: center;
+}
+.fa-play-circle,
+.fa-play-circle\:regular {
+  background-position: 0 -58px;
+  width: 21px;
+  height: 26px;
+}
+
+@media screen and (max-width: 768px) {
+  #container {
+    width: 90%;
+  }
+  h1 {
+    font-size: 200%;
+  }
+}
