@@ -22,10 +22,11 @@ function preparationNormal() {
 //set HTML elements
 const mealTitle = document.getElementById("strMeal");
 const mealImage = document.getElementById("image");
-const category = document.getElementById('category');
-const tags = document.getElementById('tags');
-const filterList = document.getElementById('filter');
-const youtube = document.getElementById("youtube");
+
+const category = document.getElementById("div1");
+const tags = document.getElementById("tags");
+const filterList = document.getElementById("filter");
+const youTube = document.getElementById("youTube");
 const source = document.getElementById("source");
 
 //add list element
@@ -37,7 +38,7 @@ function addAsListItem(list, value) {
 
 // show ingredients
 function showIngredients(mealObj) {
-  let ingredientsList = document.getElementById('ingredient-measure');
+  let ingredientsList = document.getElementById("ingredient-measure");
   let ingredientName;
   let ingredientMeasure;
   let valueToShow;
@@ -54,32 +55,46 @@ function showIngredients(mealObj) {
 }
 //show preparation list
 function showPreparationInstructions(mealObj) {
-  const prepInstructionsList = document.getElementById("preparation-instructions");
+  const prepInstructionsList = document.getElementById(
+    "preparation-instructions"
+  );
 
-  const instructionsArr = mealObj.strInstructions.split('. ');
+  const instructionsArr = mealObj.strInstructions.split(". ");
 
-  instructionsArr.forEach(instruction => {
+  instructionsArr.forEach((instruction) => {
     addAsListItem(prepInstructionsList, instruction);
   });
 }
-function showMealMetaInfo(mealObj){
-  const header = document.querySelector('header');
+function showMealMetaInfo(mealObj) {
+  const header = document.querySelector("header");
 
   header.insertAdjacentHTML(
-    'beforeend',
-  
-    `<div class"filter"><h3 class="fa fa-tag"> ${mealObj.strCategory}</h3></div>`
+    "beforeend",
+    `<h3 id="div1" class="fa">${mealObj.strCategory}</h3>`
+  );
+
+  if (mealObj.strTags) {
+    header.insertAdjacentHTML(
+      "beforeend",
+      `<h3 class="fa fa-hashtag"> ${mealObj.strTags}</h3>`
     );
+  }
+}
+function ratestar() {
+  var a;
+  a = document.getElementById("div1");
+  a.innerHTML = "&#xf006;";
+  setTimeout(function () {
+    a.innerHTML = "&#xf123;";
+  }, 1000);
+  setTimeout(function () {
+    a.innerHTML = "&#xf005;";
+  }, 2000);
+}
+ratestar();
+setInterval(ratestar, 3000);
 
-    if (mealObj.strTags) {
-      header.insertAdjacentHTML(
-        'beforeend',
-        `<div class="filter"><h3 class="fa fa-hashtag"> ${mealObj.strTags}</h3></div>`
-      );
-    }
-  } 
-
-//run async function 
+//run async function
 async function getMeal() {
   const apiUrl = "https://www.themealdb.com/api/json/v1/1/random.php";
   try {
@@ -91,8 +106,13 @@ async function getMeal() {
 
     mealTitle.textContent = mealObj.strMeal;
     mealImage.src = mealObj.strMealThumb;
-    source.src = mealObj.strSource;
-    youtube.innerText = mealObj.strYoutube;
+
+    source.setAttribute(
+      "onclick",
+      `window.location.href = '${mealObj.strSource}'`
+    );
+
+    youTube.setAttribute("href", mealObj.strYoutube);
 
     showIngredients(mealObj);
     showPreparationInstructions(mealObj);
@@ -102,4 +122,3 @@ async function getMeal() {
   }
 }
 getMeal();
-

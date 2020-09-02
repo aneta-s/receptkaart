@@ -1,7 +1,8 @@
 $color-primary: #103438;
 $color-secondary: #ffffff;
-$color-tertiary: #777;
-$color-button:#FADB3E;
+$color-tertiary: #ee5851;
+$color-button: #fadb3e;
+$color-background-button: #aed8d5;
 
 body {
   font-family: Arial;
@@ -31,52 +32,69 @@ aside {
   img {
     width: 100%;
   }
+
   .button {
-    color: $color-button;
     display: inline-block;
+    width: 75px;
+    height: 75px;
+    background: $color-button;
+    border-radius: 50%;
+    border: 2px solid $color-button;
+    box-sizing: border-box;
     position: absolute;
     top: 95%;
     right: 10%;
-    width: em(65);//4.0625em
-    height: em(65);
-    border-radius: em(65);
-    line-height: em(65);
-    text-align: center;
+    transition: all 0.2s;
+  }
 
-    .fa {
-      vertical-align: middle;
-    }
+  .button::after {
+    content: "";
+    position: absolute;
+    top: 17px;
+    left: 25px;
+    width: 0;
+    height: 0;
+    border: 19px solid transparent;
+    border-left: 32px solid $color-background-button;
+  }
+
+  .button:hover {
+    cursor: pointer;
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2);
+  }
+
+  .button:active {
+    cursor: pointer;
+    box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.2);
   }
 }
 
-.filter {
-
-    display: inline-block;
-  
-}
-
-a.block {
-  display: inline;//or block?
+.hvr-shadow {
+  display: inline-block;
+  outline: none;
   width: 100%;
   cursor: pointer;
   border: none;
-  outline: none;
   color: $color-secondary;
-  background-color: rgba(
-    $color-primary,
-    0.8
-  ); //in css you can not put hex, in scss you can :) #fffff and then opacity
+  background-color: $color-tertiary;
   margin: 50px 0px 50px;
   padding: 15px 15px;
   border-radius: 5px;
   font-size: 16px;
   text-align: center;
+  vertical-align: middle;
+  -webkit-transform: perspective(1px) translateZ(0);
+  transform: perspective(1px) translateZ(0);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  -webkit-transition-property: box-shadow;
+  transition-property: box-shadow;
 }
-.fa-play-circle,
-.fa-play-circle\:regular {
-  background-position: 0 -58px;
-  width: 21px;
-  height: 26px;
+.hvr-shadow:hover,
+.hvr-shadow:focus,
+.hvr-shadow:active {
+  box-shadow: 0 10px 10px -10px rgba(0, 0, 0, 0.8);
 }
 
 @media screen and (max-width: 768px) {
