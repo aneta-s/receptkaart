@@ -1,3 +1,4 @@
+// hover effect icons
 function ingredientsHover() {
   document.getElementById(
     "ingredients"
@@ -65,6 +66,7 @@ function showPreparationInstructions(mealObj) {
     addAsListItem(prepInstructionsList, instruction);
   });
 }
+// show tags & category
 function showMealMetaInfo(mealObj) {
   const header = document.querySelector("header");
 
@@ -80,6 +82,7 @@ function showMealMetaInfo(mealObj) {
     );
   }
 }
+// animate icon
 function ratestar() {
   var a;
   a = document.getElementById("div1");
@@ -106,12 +109,10 @@ async function getMeal() {
 
     mealTitle.textContent = mealObj.strMeal;
     mealImage.src = mealObj.strMealThumb;
-
     source.setAttribute(
       "onclick",
       `window.location.href = '${mealObj.strSource}'`
     );
-
     youTube.setAttribute("href", mealObj.strYoutube);
 
     showIngredients(mealObj);

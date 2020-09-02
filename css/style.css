@@ -1,5 +1,5 @@
 body {
-  font-family: Arial;
+  font-family: Arial, "Courier New", Courier, monospace;
   color: #103438; }
 
 #container {
@@ -33,6 +33,7 @@ aside {
     position: absolute;
     top: 95%;
     right: 10%;
+    -webkit-transition: all 0.2s;
     transition: all 0.2s; }
   aside .button::after {
     content: "";
@@ -51,10 +52,8 @@ aside {
     box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.2); }
 
 .hvr-shadow {
-  display: inline-block;
   outline: none;
   width: 100%;
-  cursor: pointer;
   border: none;
   color: #ffffff;
   background-color: #ee5851;
@@ -70,7 +69,9 @@ aside {
   -webkit-transition-duration: 0.3s;
   transition-duration: 0.3s;
   -webkit-transition-property: box-shadow;
-  transition-property: box-shadow; }
+  transition-property: box-shadow;
+  display: inline-block;
+  cursor: pointer; }
 
 .hvr-shadow:hover,
 .hvr-shadow:focus,
